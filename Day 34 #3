@@ -1,0 +1,15 @@
+PATTERN 14:
+https://takeuforward.org/pattern/pattern-14-increasing-letter-triangle-pattern/
+
+class Solution {
+
+    void printTriangle(int n) {
+        // code here
+        for(int i=1;i<=n;i++){
+            for(char c='A';c<'A'+i;c++){
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
+}
