@@ -1,0 +1,46 @@
+prime number
+Description
+
+Write a program to find whether the given number is a prime number or not using recursion.
+
+Input Format
+
+The Input consists of an integer.
+
+Output Format
+
+Prints Prime Number or Not a Prime number.
+Sample Input 1
+
+13
+
+Sample Output 1
+
+Prime Number
+
+CODE:
+
+import java.util.Scanner;
+public class Main {
+    public static boolean isPrime(int n, int d) {
+        if (n <= 2) 
+            return (n == 2); 
+        if (n % d == 0) 
+            return false;
+        if (d * d > n) 
+            return true;
+        return isPrime(n, d+ 1); 
+    }
+    public static void main(String[] args) {
+        Scanner s= new Scanner(System.in);
+        int num = s.nextInt();
+       if(num>2) {
+            boolean r= isPrime(num, 2); 
+            if (r) 
+                System.out.println("Prime Number");
+           else 
+                System.out.println("Not a Prime Number");
+        }
+    }
+}
+
