@@ -1,0 +1,57 @@
+sum of the positive odd numbers
+
+Description
+
+Write a program to find the sum of the positive odd numbers present in an array using recursion.
+
+Input Format
+
+The first integer input represents the size of the array (n), next n lines consist of values present in the array.
+
+
+
+Output Format
+
+The output prints the sum of positive odd numbers in an array. Refer to the sample output for formatting specifications.
+
+Sample Input 1
+
+3
+
+1
+
+1
+
+1
+
+
+
+Sample Output 1
+
+Sum = 3
+
+CODE:
+
+import java.util.*;
+class Main
+{
+  static int sop(int a[],int n){
+    if (n < 0) 
+      return 0;
+    if (a[n] > 0 && a[n] % 2 != 0) 
+      return a[n] + sop(a, n - 1);
+    else 
+      return sop(a, n - 1); 
+    }
+  public static void main(String args[])
+  {
+    Scanner s=new Scanner(System.in);
+    int si=s.nextInt();
+    int[] a = new int[si];
+     for (int i = 0; i < si; i++) {
+            a[i] = s.nextInt();
+        }
+    System.out.println("Sum = "+sop(a,si-1));
+  }
+}
+
