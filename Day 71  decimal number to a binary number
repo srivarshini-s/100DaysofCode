@@ -1,0 +1,43 @@
+decimal number to a binary number
+
+Description
+
+Write a program to convert a decimal number to a binary number by recursion.
+
+Input Format
+
+The Input consists of an Integer
+
+Output Format
+
+The Output consists of the input binary form
+
+
+Sample Input 0
+
+10
+
+Sample Output 0
+
+1010
+
+CODE:
+
+import java.util.Scanner;
+public class Main{
+    public static void d2b(int d) {
+        if (d> 0) {
+            d2b(d / 2); 
+            System.out.print(d % 2); 
+        }}
+    public static void main(String[] args) {
+        Scanner s= new Scanner(System.in);
+        int d= s.nextInt();
+        if (d == 0) 
+            System.out.println("0"); 
+        else {
+            d2b(d);
+            System.out.println();
+        }
+    }
+}
