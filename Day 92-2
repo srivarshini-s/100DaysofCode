@@ -1,0 +1,58 @@
+ Maximum Product Difference Between Two Pairs
+
+Given an integer array nums, choose four distinct indices w, x, y, and z such that the product difference between pairs (nums[w], nums[x]) and (nums[y], nums[z]) is maximized.
+
+Return the maximum such product difference.
+
+ 
+
+Example 1:
+
+Input: nums = [5,6,2,7,4]
+Output: 34
+Explanation: We can choose indices 1 and 3 for the first pair (6, 7) and indices 2 and 4 for the second pair (2, 4).
+The product difference is (6 * 7) - (2 * 4) = 34.
+Example 2:
+
+Input: nums = [4,2,5,9,7,4,8]
+Output: 64
+Explanation: We can choose indices 3 and 6 for the first pair (9, 8) and indices 1 and 5 for the second pair (2, 4).
+The product difference is (9 * 8) - (2 * 4) = 64.
+ 
+
+Constraints:
+
+4 <= nums.length <= 104
+1 <= nums[i] <= 104
+
+CODE:
+
+class Solution {
+    public int maxProductDifference(int[] nums) {
+        int mx1=0,mx2=0;
+        int mi1=Integer.MAX_VALUE,mi2=Integer.MAX_VALUE;
+        for (int n : nums) {
+
+            if (n > mx1) {
+                mx2 = mx1;
+                mx1 = n;
+            } 
+            else if (n > mx2) {
+                mx2 = n;
+            }
+
+            if (n < mi1) {
+                mi2 = mi1;
+                mi1 = n;
+            } 
+            else if (n < mi2) {
+                mi2 = n;
+            }
+        }
+        return (mx1*mx2)-(mi1*mi2);
+
+    }
+}
+        
+
+       
